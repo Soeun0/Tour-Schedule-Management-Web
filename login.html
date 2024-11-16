@@ -5,35 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pick Us</title>
-    <link rel="stylesheet" href="styles/calendar.css">
+    <link rel="stylesheet" href="styles/login.css">
 </head>
 
 <body>
     <div id="header"></div>
-    <main> <!-- 메인 콘텐츠 영역을 나타냄, navigation 바랑 달력을 같이 묶어서 css스타일 적용시킴, css 파일 맨 밑에 있으니 참고-->
+    <div class="container">
         <div id="navigation"></div>
-        <div class="wrapper">
-            <div class="calendar">
-                <div class="navContainer">
-                    <div class="year">
-                        <button class="last_year"> &lt </button>
-                        <p class="current-date year-date"></p>
-                        <button class="next_year"> &gt </button>
-                    </div>
-                    <div class="month">
-                        <button class="last_month"> &lt </button>
-                        <p class="current-date month-date"></p>
-                        <button class="next_month"> &gt </button>
-                    </div>
-                </div>
-                <ul class="weeks"></ul>
-                <ul class="days"></ul>
-            </div>
-        </div>
-    </main>
+        <section>
+            <h2>로그인</h2>
+            <form>
+                <label for="id">아이디</label>
+                <input type="text" id="id" placeholder="아이디를 입력하세요" required>
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" placeholder="비밀번호를 입력하세요" required>
+                <button type="submit">로그인</button>
+            </form>
+        </section>
+    </div>
     <div id="footer"></div>
 </body>
-
 <script>
     function loadHTML() {
         fetch('header.html')
@@ -61,7 +52,5 @@
     }
     document.addEventListener('DOMContentLoaded', loadHTML);
 </script>
-
-<script src="scripts/calendar.js"></script>
 
 </html>

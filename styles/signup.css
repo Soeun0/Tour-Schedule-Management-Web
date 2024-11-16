@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif; /* Body 기본 설정 */
+    background-color: #f9f9f9; /* Body 기본 설정 */
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+}
+
+h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+form {
+    width: 100%; /* 폼의 너비를 100%로 설정 */
+    max-width: 600px; /* 최대 너비를 400px로 설정 */
+    padding: 70px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+section h2 {
+    font-size: 50px;
+    
+}
+form label {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%; /* 입력 상자의 너비를 100%로 설정 */
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+form input:focus {
+    border-color: #007bff;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* 버튼 컨테이너의 너비를 100%로 설정 */
+    margin-top: 30px;
+}
+
+.buttons button {
+    width: 48%; /* 각 버튼의 너비를 48%로 설정하여 여백을 유지 */
+    padding: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.buttons button:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-2px);
+}
+
+.buttons .signup {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.buttons .signup:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
