@@ -33,6 +33,9 @@
     </main>
     <div id="footer"></div>
 </body>
+<div class="floating-button">
+    <a href="addSchedule.html">+</a>
+</div>
 
 <script>
     function loadHTML() {
@@ -40,12 +43,6 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header').innerHTML = data;
-                const today = new Date();
-                const year = today.getFullYear();
-                const month = String(today.getMonth() + 1).padStart(2, '0');
-                const day = String(today.getDate()).padStart(2, '0');
-                const formattedDate = `${year} / ${month} / ${day}`;
-
                 document.getElementById('date').textContent = formattedDate;
             });
         fetch('navigation.html')
@@ -63,5 +60,6 @@
 </script>
 
 <script src="scripts/calendar.js"></script>
+<script src="scripts/header.js"></script>
 
 </html>

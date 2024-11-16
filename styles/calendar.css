@@ -69,7 +69,7 @@ body {
 
 .calendar .days {
     margin-bottom: 20px;
-    height: 570px; /*달력 너비*/
+    height: 85%; /*달력 너비*/
 }
 
 .calendar ul li {
@@ -91,26 +91,15 @@ body {
     color: #666;
 }
 
-.calendar .days li::before {
-    position: absolute;
-    content: '';
-    height: 30px;
-    width: 30px;
-    top: 28%;  /* 기존 50%에서 45%로 변경하여 위로 살짝 이동 */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: -1;
-}
-
 .days li.active::before,
 .days li.selected::before {
     background: #008aff;
 }
 
 .days li.active,
-.days li.selected {
-    color: white;
+.days li.selected { /*이거 왜 있는지?, 단일 선택*/
+    background-color: #7ad9ff;
+    color: rgb(0, 0, 0);
 }
 
 .days li.today {
@@ -146,6 +135,35 @@ body {
     border-color: #008aff;
 }
 
+/*떠 있는 동그라미 버튼*/
+
+.floating-button {
+    position: fixed; /* 화면에 고정 */
+    bottom: 40px; /* 아래에서 40px */
+    right: 40px; /* 오른쪽에서 40px */
+    width: 80px; /* 버튼의 너비 */
+    height: 80px; /* 버튼의 높이 */
+    background-color: #008aff; /* 버튼의 배경색 */
+    border-radius: 50%; /* 동그란 모양 */
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center; /* 중앙 정렬 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+    color: white; /* 기본 글자색 */
+    font-size: 24px; /* 글자 크기 */
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    transition: background-color 0.3s, color 0.3s; /* 배경색과 글자색 변화에 부드러운 전환 효과 */
+}
+
+.floating-button a {
+    color: inherit; /* 부모의 글자색 상속 */
+    font-size: inherit; /* 부모의 글자 크기 상속 */
+}
+
+.floating-button:hover {
+    background-color: #0056b3; /* 호버 시 배경색 변경 */
+    color: #ffffff; /* 호버 시 글자색 변경 */
+}
 
 /* main태그 스타일 지정해줌 */
 main {
