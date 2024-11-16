@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+body {
+    user-select: none;
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 배치 */
+    min-height: 100vh;
+    margin: 0; /* 기본 여백 제거 */
+    border: solid 1px #008aff; /* 바깥 테두리 */
+}
+
+.wrapper {
+    display: flex; /* 플렉스 레이아웃으로 설정 */
+    flex-grow: 1; /* 남은 공간을 차지하도록 설정 */
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.calendar {
+    flex-grow: 1; /* 달력이 남은 공간을 차지하도록 설정 */
+    padding: 20px; /* 달력 패딩 */
+}
+
+.wrapper .navContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.wrapper .navContainer .year,
+.wrapper .navContainer .month {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.wrapper .navContainer .current-date {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 10px;
+}
+
+.wrapper .navContainer button {
+    width: 40px;
+    height: 38px;
+    font-size: 30px;
+    color: #878787;
+}
+
+.calendar ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.calendar .weeks li {
+    font-weight: 500;
+}
+
+.calendar .days {
+    margin-bottom: 20px;
+    height: 570px; /*달력 너비*/
+}
+
+.calendar ul li {
+    width: calc(100% / 7);
+    position: relative;
+}
+
+.calendar .days li {
+    z-index: 1;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.days li.inactive {
+    color: #aaa;
+}
+
+.days li.active {
+    color: #666;
+}
+
+.calendar .days li::before {
+    position: absolute;
+    content: '';
+    height: 30px;
+    width: 30px;
+    top: 28%;  /* 기존 50%에서 45%로 변경하여 위로 살짝 이동 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.days li.active::before,
+.days li.selected::before {
+    background: #008aff;
+}
+
+.days li.active,
+.days li.selected {
+    color: white;
+}
+
+.days li.today {
+    color: #0004ff;
+}
+
+.selected-range {
+    background-color: #008aff;
+    color: white;
+    padding: 10px 10px;
+    border: 1px solid #008aff;
+}
+
+.inactive {
+    color: #ccc;
+}
+
+.day-description-container {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.date-description {
+    position: relative;
+    z-index: 1; 
+    font-size: 12px;
+    color: rgb(69, 69, 69); 
+}
+
+.day-description:focus {
+    border-color: #008aff;
+}
+
+
+/* main태그 스타일 지정해줌 */
+main {
+    display: flex; /* 네비게이션과 달력을 가로로 나란히 배치 */
+    /*flex-grow: 1; /* 남은 공간을 차지하도록 설정 -> 이거 실행하면 footer가 바닥으로 붙어서 여백*/ 
+}

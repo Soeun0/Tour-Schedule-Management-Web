@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<body>
+    <body>
+        <div id="navigation"></div>
+        <script>
+            fetch('navigation.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navigation').innerHTML = data;
+                });
+        </script>
+    </body>
+</body>
+</html>

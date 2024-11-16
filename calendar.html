@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Calendar</title>
+    <link rel="stylesheet" href="styles/calendar.css">
+</head>
+
+<body>
+    <div id="header"></div>
+    <main> <!-- 메인 콘텐츠 영역을 나타냄, navigation 바랑 달력을 같이 묶어서 css스타일 적용시킴, css 파일 맨 밑에 있으니 참고-->
+        <div id="navigation"></div>
+        <div class="wrapper">
+            <div class="calendar">
+                <div class="navContainer">
+                    <div class="year">
+                        <button class="last_year"> &lt </button>
+                        <p class="current-date year-date"></p>
+                        <button class="next_year"> &gt </button>
+                    </div>
+                    <div class="month">
+                        <button class="last_month"> &lt </button>
+                        <p class="current-date month-date"></p>
+                        <button class="next_month"> &gt </button>
+                    </div>
+                </div>
+                <ul class="weeks"></ul>
+                <ul class="days"></ul>
+            </div>
+        </div>
+    </main>
+    <div id="footer"></div>
+</body>
+
+<script>
+    function loadHTML() {
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+                const today = new Date();
+                const year = today.getFullYear();
+                const month = String(today.getMonth() + 1).padStart(2, '0');
+                const day = String(today.getDate()).padStart(2, '0');
+                const formattedDate = `${year} / ${month} / ${day}`;
+
+                document.getElementById('date').textContent = formattedDate;
+            });
+        fetch('navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navigation').innerHTML = data;
+            });
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    }
+    document.addEventListener('DOMContentLoaded', loadHTML);
+</script>
+
+<script src="scripts/calendar.js"></script>
+
+</html>
