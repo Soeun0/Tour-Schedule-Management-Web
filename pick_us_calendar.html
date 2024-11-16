@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #f9f9f9;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ddd;
+        }
+        header h1 {
+            font-size: 24px;
+            color: #007bff;
+        }
+        header .date {
+            font-size: 18px;
+            color: #555;
+        }
+        footer {
+            background-color: #f9f9f9;
+            padding: 10px 20px;
+            text-align: center;
+            border-top: 2px solid #ddd;
+            font-size: 14px;
+            color: #888;
+            margin-top: auto;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+        }
+        aside {
+            width: 330px;
+            background-color: #fff;
+            padding: 20px;
+            border-right: 2px solid #ddd;
+            text-align: center;
+        }
+        aside img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ddd;
+            margin-bottom: 35px;
+        }
+        aside .info {
+            margin-bottom: 40px;
+        }
+        aside .info .nickname {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        aside .info .description {
+            font-size: 18px;
+            color: #555;
+        }
+        aside .menu {
+            margin-top: 20px;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+        }
+        aside .menu a {
+            display: block;
+            padding: 40px 0;
+            font-size: 20px;
+            color: #555;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+        }
+        aside .menu a:hover {
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pick Us!</h1>
+        <div id="date" class="date"></div> <!-- date에 JavaScript로 오늘 날짜 표시 -->
+    </header>
+
+    <div class="container">
+        <aside>
+            <img src="1.png" alt="Profile Image">
+            <div class="info">
+                <p id="nickname" class="nickname">홍길동</p> <!-- 닉네임 -->
+                <p id="description" class="description">여행을 좋아하는 개발자</p> <!-- 한줄 소개 -->
+            </div>
+            <div class="menu">
+                <a href="#mypage">마이페이지</a>
+                <a href="#travel">여행 일정 공유</a>
+                <a href="#login">로그인/로그아웃</a>
+                <a href="#signup">회원가입</a>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        ⓒ 동의대학교 컴퓨터소프트웨어공학과
+    </footer>
+
+    <script>
+        // 오늘 날짜 가져오기
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        const formattedDate = `${year} / ${month} / ${day}`;
+        document.getElementById('date').textContent = formattedDate;
+    </script>
+</body>
+</html>
