@@ -4,38 +4,38 @@
     height: 100%;
 }
 aside {
-    width: 330px;
+    width: 100%;
     background-color: #ffffff;
-    padding-top: 50px;
+    padding-top: 10%;
     border-right: 4px solid #ccc;
     text-align: center;
     height: 100%;
 }
 aside img {
-    width: 300px;
-    height: 300px;
+    width: 90%;
+    height: 16%;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #ddd;
-    margin-bottom: 35px;
+    margin-bottom: 10%;
 }
 aside .info {
-    margin-bottom: 40px;
+    margin-bottom: 20%;
 }
 aside .info .nickname {
-    font-size: 30px;
+    font-size: 23px;
     font-weight: bold;
     color: #333;
     padding-bottom: 5px;
 }
 aside .info .description {
-    font-size: 20px;
+    font-size: 17px;
     color: #555;
 }
 
 aside .menu a {
     display: block;
-    padding: 40px;
+    padding: 10%;
     font-size: 20px;
     font-weight: bold;
     color: #555;

@@ -1,16 +1,196 @@
 <!DOCTYPE html>
 <html lang="ko">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick Us</title>
+    <link rel="stylesheet" href="styles/addSchedule.css">
+</head>
+
 <body>
-    <body>
+    <div id="header"></div>
+    <main>
         <div id="navigation"></div>
-        <script>
-            fetch('navigation.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navigation').innerHTML = data;
-                });
-        </script>
-    </body>
+        <form class="addSchedule">
+            <div class="schedule-column-1">
+                <section>
+                    <h1>여행 정보 입력</h1>
+                    <div class="input-group">
+                        <label for="country">여행 나라</label>
+                        <input type="text" id="country" name="country" placeholder="나라를 입력하세요" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="region">여행 지역</label>
+                        <input type="text" id="region" name="region" placeholder="지역을 입력하세요" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="title">여행 제목</label>
+                        <input type="text" id="title" name="title" placeholder="제목을 입력하세요" required>
+                    </div>
+                    <div class="input-group date-group">
+                        <div>
+                            <label for="departure-date">출발 날짜</label>
+                            <input type="date" id="departure-date" name="departure-date" required>
+                        </div>
+                        <div>
+                            <label for="arrival-date">도착 날짜</label>
+                            <input type="date" id="arrival-date" name="arrival-date" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="budget">예상 지출</label>
+                        <input type="number" id="budget" name="budget" placeholder="예상 지출을 입력하세요" required>
+                    </div>
+            </div>
+            </section>
+
+            <section>
+                <div class="schedule-column-2">
+                    <div class="addScheduleTime">
+                        <div id="Otitle"> ❤️ 여행 제목 : <span id="title-output"></span></div>
+                        <div id="Oregion">✈️ 여행 지역 : <span id="region-output"></span></div>
+                        <div id="timetable">📅</div>
+                        <div class="best-schedule">
+                            <button id="prev-day">◀</button>
+                            <h3>⭐BEST⭐ <input type="text" id="best-input" placeholder="여기에 입력하세요" /></h3>
+                            <button id="next-day">▶</button>
+                        </div>
+                        <form class="schedule-form" id="schedule-form">
+                            <div class="schedule-container">
+                                <div class="schedule-column">
+                                    <div class="time-slot">
+                                        <label><strong>06:00</strong></label>
+                                        <input type="text" name="schedule_6" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>07:00</strong></label>
+                                        <input type="text" name="schedule_7" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>08:00</strong></label>
+                                        <input type="text" name="schedule_8" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>09:00</strong></label>
+                                        <input type="text" name="schedule_9" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>10:00</strong></label>
+                                        <input type="text" name="schedule_10" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>11:00</strong></label>
+                                        <input type="text" name="schedule_11" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>12:00</strong></label>
+                                        <input type="text" name="schedule_12" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>13:00</strong></label>
+                                        <input type="text" name="schedule_13" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>14:00</strong></label>
+                                        <input type="text" name="schedule_14" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>15:00</strong></label>
+                                        <input type="text" name="schedule_15" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>16:00</strong></label>
+                                        <input type="text" name="schedule_16" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>17:00</strong></label>
+                                        <input type="text" name="schedule_17" placeholder="일과를 입력하세요">
+                                    </div>
+                                </div>
+                                <div class="schedule-column">
+                                    <div class="time-slot">
+                                        <label><strong>18:00</strong></label>
+                                        <input type="text" name="schedule_18" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>19:00</strong></label>
+                                        <input type="text" name="schedule_19" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>20:00</strong></label>
+                                        <input type="text" name="schedule_20" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>21:00</strong></label>
+                                        <input type="text" name="schedule_21" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>22:00</strong></label>
+                                        <input type="text" name="schedule_22" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>23:00</strong></label>
+                                        <input type="text" name="schedule_23" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>00:00</strong></label>
+                                        <input type="text" name="schedule_0" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>01:00</strong></label>
+                                        <input type="text" name="schedule_1" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>02:00</strong></label>
+                                        <input type="text" name="schedule_2" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>03:00</strong></label>
+                                        <input type="text" name="schedule_3" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>04:00</strong></label>
+                                        <input type="text" name="schedule_4" placeholder="일과를 입력하세요">
+                                    </div>
+                                    <div class="time-slot">
+                                        <label><strong>05:00</strong></label>
+                                        <input type="text" name="schedule_5" placeholder="일과를 입력하세요">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="submit" type="submit">제출</button>
+                        </form>
+                    </div>
+                    </div>
+            </section>
+        </form>
+    </main>
+    <div id="footer"></div>
 </body>
+
+<script>
+    function loadHTML() {
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+                document.getElementById('date').textContent = formattedDate;
+            });
+        fetch('navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navigation').innerHTML = data;
+            });
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    }
+    document.addEventListener('DOMContentLoaded', loadHTML);
+</script>
+<script src="scripts/header.js"></script>
+<script src="scripts/addSchedule.js"></script>
+
 </html>
